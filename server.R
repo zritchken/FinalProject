@@ -12,13 +12,13 @@ shinyServer(
                         if (input$Engine == "1") "4-Cyl"
                         else if (input$Engine == "2") "6-Cyl"
                         else if (input$Engine == "3") "8-Cyl"
-                        else "You fail"
+                        else ""
                 })
                 
                 output$SpeedType <- renderText({
                         if (input$Speed == "1") "Acceleration"
                         else if (input$Speed == "2") "Efficiency"
-                        else "you suck"
+                        else ""
                 })
                 
                 data_modded <- reactive({
@@ -37,12 +37,8 @@ shinyServer(
                         mtcars <- as.character(mtcars)
                         return(mtcars)
                         
-                })
+              
                 
-                answer <- reactive({
-                        newanswer <- data_modded[1,12]
-                        newanswer <- as.character(newanswer)
-                        return(newanswer)
                         
                 })
                 
